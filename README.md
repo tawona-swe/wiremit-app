@@ -14,6 +14,13 @@ Key features include:
 
 ---
 
+## 📷 Live Hosting
+This website is hosted on vercel. User this link to access it here: 
+
+https://wiremit-app.vercel.app/
+
+---
+
 ## 🚀 How to Run the App
 
 1. **Clone the repository**
@@ -97,11 +104,6 @@ Actions (e.g., login) trigger functions passed as props, updating state in `App.
 - **Input Validation**  
   - Forms require non-empty fields.
   - Amount inputs use `min` and `max` HTML attributes for validation.
-
----
-
-## 📷 Screenshots
-*(Add your screenshots here if available)*
 
 ---
 
