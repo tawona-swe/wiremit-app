@@ -33,11 +33,11 @@ Key features include:
 
 4. **Start the development server**
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. The application should open automatically in your browser at  
-   **http://localhost:3000**
+   **http://localhost:5173**
 
 ---
 
