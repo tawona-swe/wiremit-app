@@ -25,7 +25,7 @@ https://wiremit-app.vercel.app/
 
 1. **Clone the repository**
    ```bash
-   git clone [your-github-repo-url]
+   git clone https://github.com/tawona-swe/wiremit-app.git
    ```
 
 2. **Navigate into the project directory**
