@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Dashboard = ({ currentUser, fxRates, isLoading, onLogout, showMessage }) => {
-    // Mock data for the ads carousel and transaction history
+
     // Mock data for the ads carousel and transaction history
     const mockAds = [
         { id: 1, text: "Send money with ease. Low fees, fast transfers.", imageUrl: "/img/mock-ad-1.jpg" },
@@ -43,7 +43,6 @@ const Dashboard = ({ currentUser, fxRates, isLoading, onLogout, showMessage }) =
         currentPage * transactionsPerPage
     );
 
-    // Function to handle next/previous ad in carousel
     const nextAd = () => setAdsIndex((prevIndex) => (prevIndex + 1) % mockAds.length);
     const prevAd = () => setAdsIndex((prevIndex) => (prevIndex - 1 + mockAds.length) % mockAds.length);
 
@@ -64,7 +63,6 @@ const Dashboard = ({ currentUser, fxRates, isLoading, onLogout, showMessage }) =
         }
     }, [amount, currency, fxRates]);
 
-    // New useEffect to handle the automatic carousel functionality
     useEffect(() => {
         // Set an interval to advance the carousel every 5 seconds (5000 milliseconds)
         const carouselInterval = setInterval(() => {
@@ -73,7 +71,7 @@ const Dashboard = ({ currentUser, fxRates, isLoading, onLogout, showMessage }) =
 
         // Cleanup function to clear the interval when the component unmounts or re-renders
         return () => clearInterval(carouselInterval);
-    }, [mockAds.length]); // The dependency array ensures the effect runs when the number of ads changes
+    }, [mockAds.length]);
 
     return (
         <div className="min-h-screen bg-gray-100 p-4 font-sans flex flex-col">
@@ -154,7 +152,6 @@ const Dashboard = ({ currentUser, fxRates, isLoading, onLogout, showMessage }) =
                         <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${adsIndex * 100}%)` }}>
                             {mockAds.map((ad) => (
                                 <div key={ad.id} className="w-full flex-shrink-0 relative h-48 rounded-xl overflow-hidden">
-                                    {/* Using a direct <img> tag for more reliable image display */}
                                     <img 
                                         src={ad.imageUrl} 
                                         alt={ad.text}

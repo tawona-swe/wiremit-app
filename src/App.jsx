@@ -4,7 +4,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Dashboard from './pages/Dashboard';
 
-// A simple component to display messages instead of using alert()
+// A simple component to display messages
 const MessageBox = ({ message, type, onClose }) => {
     if (!message) return null;
 
@@ -20,7 +20,7 @@ const MessageBox = ({ message, type, onClose }) => {
     );
 };
 
-// A Higher-Order Component to protect routes
+// A Component to protect routes
 const ProtectedRoute = ({ user, children }) => {
     const navigate = useNavigate();
     useEffect(() => {
@@ -79,7 +79,9 @@ const App = () => {
     // Function to set messages for user feedback
     const showMessage = (text, type = 'success') => {
         setMessage({ text, type });
-        setTimeout(() => setMessage({ text: '', type: '' }), 5000); // Hide message after 5 seconds
+
+        // Hide message after 5 seconds
+        setTimeout(() => setMessage({ text: '', type: '' }), 5000); 
     };
 
     return (
